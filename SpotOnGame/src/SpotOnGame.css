@@ -1,0 +1,34 @@
+/*
+ Philip Awini
+ 1169595
+ ESOF-2570 
+ */
+ 
+ .root
+ {
+ 	-fx-background-color:grey;
+ }
+ 
+#level,#highScore,#score,#CurrrentScoreLabel,#HighScoreLabel,#CurrentLevelLabel{
+	-fx-font: bold 10pt System;
+}
+
+
+
+#GreenSpot1,#GreenSpot2,#GreenSpot3  {
+   -fx-stroke: green;
+   -fx-fill: image-pattern("green_spot.png");
+}
+
+
+#RedSpot1,#RedSpot2 {
+   -fx-stroke: green;
+   -fx-fill: image-pattern("red_spot.png");
+}
+
+
+#Life1,#Life2,#Life3,#Life4,#Life5,#Life6,#Life7 {
+   -fx-stroke: green;
+   -fx-fill: image-pattern("life.png");
+}
+

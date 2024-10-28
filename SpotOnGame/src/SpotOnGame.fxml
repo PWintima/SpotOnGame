@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Philip Awini -->
+<!-- 1169595 -->
+<!-- ESOF 2570 - Term Project -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="missedClickPane" onMouseClicked="#MissedSpot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SpotOnController">
+   <children>
+      <HBox maxHeight="1.7976931348623157E308" prefHeight="38.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <HBox prefHeight="18.0" prefWidth="300.0">
+                     <children>
+                        <Label fx:id="highScore" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="75.0" text="High score: " />
+                        <Label fx:id="HighScoreLabel" text="0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="400.0">
+                     <children>
+                        <Label fx:id="score" text="Score: " />
+                        <Label fx:id="CurrrentScoreLabel" maxWidth="1.7976931348623157E308" text="0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label fx:id="level" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" text="Level: ">
+               <HBox.margin>
+                  <Insets left="410.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="0.0" />
+               </padding>
+            </Label>
+            <Label fx:id="CurrentLevelLabel" text="1">
+               <padding>
+                  <Insets right="10.0" />
+               </padding></Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <Circle fx:id="GreenSpot1" fill="#28cc1c" layoutX="155.0" layoutY="176.0" onMouseClicked="#ClickedOnSpot" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="RedSpot1" fill="#d72c2c" layoutX="273.0" layoutY="200.0" onMouseClicked="#ClickedOnSpot" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="GreenSpot2" fill="#28cc1c" layoutX="214.0" layoutY="290.0" onMouseClicked="#ClickedOnSpot" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="GreenSpot3" fill="#28cc1c" layoutX="332.0" layoutY="314.0" onMouseClicked="#ClickedOnSpot" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="RedSpot2" fill="#d72c2c" layoutX="400.0" layoutY="155.0" onMouseClicked="#ClickedOnSpot" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <HBox layoutY="365.0" prefHeight="38.0" prefWidth="332.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="538.0">
+         <children>
+            <Circle fx:id="Life1" fill="#28cc1c" radius="15.0" stroke="BLACK" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="Life2" fill="#28cc1c" layoutX="30.0" layoutY="25.0" radius="15.0" stroke="BLACK" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="Life3" fill="#28cc1c" layoutX="60.0" layoutY="25.0" radius="15.0" stroke="BLACK" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="Life4" fill="#28cc1c" layoutX="30.0" layoutY="25.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" visible="false">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="Life5" fill="#28cc1c" layoutX="65.0" layoutY="25.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" visible="false">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="Life6" fill="#28cc1c" layoutX="100.0" layoutY="25.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" visible="false">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="Life7" fill="#28cc1c" layoutX="206.0" layoutY="25.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" visible="false">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Circle>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
