@@ -32,61 +32,33 @@ import java.io.PrintWriter;
 public class SpotOnController  {
 
     @FXML
-    private Label CurrentLevelLabel;
+    private Label level,highScore,score;
 
     @FXML
-    private Label CurrrentScoreLabel;
-
-    @FXML
-    private Circle GreenSpot1;
-
-    @FXML
-    private Circle GreenSpot2;
-
-    @FXML
-    private Circle GreenSpot3;
-
-    @FXML
-    private Label HighScoreLabel;
-
-    @FXML
-    private Circle Life1;
-
-    @FXML
-    private Circle Life2;
-
-    @FXML
-    private Circle Life3;
-    @FXML
-    private Circle Life4;
-
-    @FXML
-    private Circle Life5;
-
-    @FXML
-    private Circle Life6;
-
-    @FXML
-    private Circle Life7;
+    private Label CurrentLevelLabel,CurrrentScoreLabel,HighScoreLabel;
 
 
     @FXML
-    private Circle RedSpot1;
+    private Circle GreenSpot1,GreenSpot2,GreenSpot3;
+
+    
 
     @FXML
-    private Circle RedSpot2;
+    private Circle Life1,Life2,Life3,Life4,Life5,Life6,Life7;
+
+    
+
 
     @FXML
-    private Label highScore;
+    private Circle RedSpot1,RedSpot2;
 
-    @FXML
-    private Label level;
+
+   
 
     @FXML
     private AnchorPane missedClickPane;
 
-    @FXML
-    private Label score;
+ 
     
     private Timeline timeline;
     private MediaPlayer hitSoundPlayer;
@@ -112,21 +84,21 @@ public class SpotOnController  {
         
 
         // Initialize game elements
-    	CurrrentScoreLabel.setText("0");
-    	CurrentLevelLabel.setText("1");
+    	score.setText("0");
+    	level.setText("1");
     	// Load the highest score from storage
         highestScore = loadHighestScore();
-        HighScoreLabel.setText(String.valueOf(highestScore));
+        highScore.setText(String.valueOf(highestScore));
     	
         // Load the hit sound file
-        Media hitSound = new Media(getClass().getResource("hit.mp3").toExternalForm());
+        Media hitSound = new Media(getClass().getResource("Sounds/hit.mp3").toExternalForm());
         hitSoundPlayer = new MediaPlayer(hitSound);
 
         // Load the disappear sound file
-        Media missSound = new Media(getClass().getResource("miss.mp3").toExternalForm());
+        Media missSound = new Media(getClass().getResource("Sounds/miss.mp3").toExternalForm());
         missSoundPlayer = new MediaPlayer(missSound);
         
-        Media dissapearSound = new Media(getClass().getResource("miss.mp3").toExternalForm());
+        Media dissapearSound = new Media(getClass().getResource("Sounds/miss.mp3").toExternalForm());
         disappearSoundPlayer = new MediaPlayer(dissapearSound);
         
         animateSpot(GreenSpot1);
@@ -144,7 +116,7 @@ public class SpotOnController  {
             // Spot clicked 
             currentScore += 10 * currentLevel;
             hits++;
-            CurrrentScoreLabel.setText(String.valueOf(currentScore));
+            score.setText(String.valueOf(currentScore));
             
             hitSoundPlayer.stop();
             hitSoundPlayer.play();
@@ -152,7 +124,7 @@ public class SpotOnController  {
             // Check for level up
             if (hits % 10 == 0) {
                 currentLevel++;
-                CurrentLevelLabel.setText(String.valueOf(currentLevel));
+                level.setText(String.valueOf(currentLevel));
                 
                 // Check if life needs to be revealed
                 switch (hits / 10) { 
@@ -177,7 +149,7 @@ public class SpotOnController  {
             // Update highest score
             if (currentScore > highestScore) {
                 highestScore = currentScore;
-                HighScoreLabel.setText(String.valueOf(highestScore));
+                highScore.setText(String.valueOf(highestScore));
                 saveHighestScore(highestScore);
             }
 
@@ -243,7 +215,7 @@ public class SpotOnController  {
         if (event.getTarget() == missedClickPane) {
             // Decrease score for missing a spot
             currentScore -= MISS_PENALTY;
-            CurrrentScoreLabel.setText(String.valueOf(currentScore));
+            score.setText(String.valueOf(currentScore));
 
             // Decrease lives
             lives--;
@@ -384,8 +356,8 @@ public class SpotOnController  {
         hits = 0;
 
         // Update UI
-        CurrrentScoreLabel.setText("0");
-        CurrentLevelLabel.setText("1");
+        score.setText("0");
+        level.setText("1");
 
         // Reset life circles visibility
         Life1.setVisible(true);
@@ -404,4 +376,3 @@ public class SpotOnController  {
         animateSpot(RedSpot2);
     }
 }
-
