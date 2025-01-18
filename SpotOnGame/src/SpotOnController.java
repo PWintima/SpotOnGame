@@ -37,33 +37,21 @@ public class SpotOnController  {
     @FXML
     private Label CurrentLevelLabel,CurrrentScoreLabel,HighScoreLabel;
 
-
     @FXML
     private Circle GreenSpot1,GreenSpot2,GreenSpot3;
-
-    
 
     @FXML
     private Circle Life1,Life2,Life3,Life4,Life5,Life6,Life7;
 
-    
-
-
     @FXML
     private Circle RedSpot1,RedSpot2;
-
-
-   
 
     @FXML
     private AnchorPane missedClickPane;
 
- 
-    
     private Timeline timeline;
-    private MediaPlayer hitSoundPlayer;
-    private MediaPlayer missSoundPlayer;
-    private MediaPlayer disappearSoundPlayer;
+    private MediaPlayer hitSoundPlayer, missSoundPlayer,disappearSoundPlayer;
+    
     private int currentScore = 0;
     private int currentLevel = 1;
     private int lives = 7;

@@ -24,7 +24,7 @@ public class SpotOnGame extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args); // Start the JavaFX application
+        launch(args);  // Start the JavaFX application
     }
 
 }
